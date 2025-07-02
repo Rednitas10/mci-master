@@ -7,6 +7,10 @@ SRC:
 Target:
 
         /srv/www/$FQDN/htdocs/mci
+        (legacy)
+
+    For container-based deployments see `docs/docker-compose.md` which describes
+    how to run the application with Docker Compose and mount persistent volumes.
 
 Deploy Notes:
 
