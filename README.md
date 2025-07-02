@@ -7,6 +7,10 @@ SRC:
 Target:
 
         /srv/www/$FQDN/htdocs/mci
+        (legacy)
+
+    For container-based deployments see `docs/docker-compose.md` which describes
+    how to run the application with Docker Compose and mount persistent volumes.
 
 Deploy Notes:
 
@@ -229,4 +233,8 @@ Runtime configuration is provided via `default.env` which is loaded by `docker-c
 - `FHIR_SERVER` – URL of the FHIR server used by the application.
 
 You may override these values by creating your own `.env` or editing `default.env`.
+
+## Local Development
+
+See [docs/development.md](docs/development.md) for instructions on running the application with Docker.
 
