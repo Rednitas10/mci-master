@@ -212,6 +212,18 @@ $ ../cake/console/cake testsuite app all
          at [/srv/www/cnics.cirg.washington.edu/htdocs/mci/app/tests/cases/models/my_test_case.php line 56]
         2/2 test cases complete: 4 passes, 1 fails.
 
+DOCKER MARIADB:
+
+        cp .env.example .env
+        docker-compose up -d mariadb
+
+DATABASE INITIALIZATION:
+
+        # Core schema
+        mysql -u$DB_USER -p$DB_PASSWORD $DB_NAME < app/config/sql/sessions.sql
+        # Additional schemas are under app/config/sql/
+        # Test dataset
+        mysql $DB_NAME < app/tests/cnics-mci_test.test_event_derived_datas.schema.sql
 ## Container Setup
 
 This repository includes a lightweight Docker configuration based on the setup used in the `asbi-screening-app` project. A basic PHP/Apache image is provided along with a docker-compose file for local development.
@@ -237,4 +249,5 @@ You may override these values by creating your own `.env` or editing `default.en
 ## Local Development
 
 See [docs/development.md](docs/development.md) for instructions on running the application with Docker.
+
 
