@@ -7,9 +7,14 @@ services:
       - .:/var/www/html:ro
     environment:
       LOG_SERVER_URL: http://postgrest-internal:3000/events
+      DB_HOST: mariadb
+      DB_USER: root
+      DB_PASSWORD: example
+      DB_NAME: mci
     logging:
       driver: "json-file"
     depends_on:
+      - mariadb
       - postgrest
 
   postgrest:
@@ -41,6 +46,18 @@ services:
       - postgres-data:/var/lib/postgresql/data
       - logs-data:/var/log/postgresql
       - ./logs/logserver/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - internal
+
+  mariadb:
+    image: mariadb:10.11
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: mci
+    volumes:
+      - mariadb-data:/var/lib/mysql
+      - logs-data:/var/log/mysql
     networks:
       - internal
 
@@ -81,6 +98,7 @@ services:
 volumes:
   postgres-data:
   logs-data:
+  mariadb-data:
 
 networks:
   internal:
