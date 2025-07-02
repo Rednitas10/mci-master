@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Build React app
+        if: ${{ hashFiles('frontend/package.json') != '' }}
+        run: |
+          cd frontend
+          npm ci
+          npm run build
+
+      - name: Run PHP tests
+        run: |
+          cd app
+          bash ../cake/console/cake testsuite app all
