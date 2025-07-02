@@ -1,0 +1,55 @@
+version: '3.9'
+services:
+  app:
+    image: php:5.6-apache
+    environment:
+      APACHE_DOCUMENT_ROOT: /var/www/html/app/webroot
+      DB_HOST: ${DB_HOST}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      KEYCLOAK_URL: ${KEYCLOAK_URL}
+    volumes:
+      - ./:/var/www/html
+      - uploads:/var/www/html/app/chartUploads
+    depends_on:
+      - db
+    networks:
+      - internal
+      - ingress
+    ports:
+      - "8000:80"
+  db:
+    image: mariadb:10.6
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - internal
+  keycloak:
+    image: quay.io/keycloak/keycloak:22.0
+    command: start-dev
+    environment:
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+    volumes:
+      - keycloak-data:/opt/keycloak/data
+    networks:
+      - internal
+      - ingress
+    ports:
+      - "8081:8080"
+volumes:
+  db-data: {}
+  keycloak-data: {}
+  uploads: {}
+networks:
+  internal:
+  ingress:
+    external: true
+    name: external_web
+
