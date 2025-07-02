@@ -207,3 +207,7 @@ $ ../cake/console/cake testsuite app all
         )
          at [/srv/www/cnics.cirg.washington.edu/htdocs/mci/app/tests/cases/models/my_test_case.php line 56]
         2/2 test cases complete: 4 passes, 1 fails.
+
+## Local Development
+
+See [docs/development.md](docs/development.md) for instructions on running the application with Docker.
