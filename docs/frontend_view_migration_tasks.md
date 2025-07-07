@@ -12,14 +12,14 @@ Each migration is designed to be independent so developers can work in parallel.
 ## 2. Event Views
 Migrate each Event view into its own React page. These can be developed concurrently.
 - [x] `EventIndex` for `/events/index`
-- [ ] `EventAdd` for `/events/add`
-- [ ] `EventAddMany` for `/events/addMany`
-- [ ] `EventAssignMany` for `/events/assignMany`
-- [ ] `EventUpload` for `/events/upload`
-- [ ] `EventReview` for `/events/review`
-- [ ] `EventScreen` for `/events/screen`
-- [ ] `EventScrub` for `/events/scrub`
-- [ ] `EventViewAll` for `/events/viewAll`
+- [x] `EventAdd` for `/events/add`
+- [x] `EventAddMany` for `/events/addMany`
+- [x] `EventAssignMany` for `/events/assignMany`
+- [x] `EventUpload` for `/events/upload`
+- [x] `EventReview` for `/events/review`
+- [x] `EventScreen` for `/events/screen`
+- [x] `EventScrub` for `/events/scrub`
+- [x] `EventViewAll` for `/events/viewAll`
 
 ## 3. User Views
 - [ ] `UsersViewAll` for `/users/viewAll`
