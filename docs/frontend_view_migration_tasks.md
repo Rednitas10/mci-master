@@ -29,12 +29,12 @@ Migrate each Event view into its own React page. These can be developed concurre
 - [x] `UserLogout` for `/users/logout`
 
 ## 4. Solicitation and Criteria Views
-- [ ] `SolicitationAdd` and `SolicitationDelete`
-- [ ] `CriteriaAdd` and `CriteriaDelete`
+- [x] `SolicitationAdd` and `SolicitationDelete`
+- [x] `CriteriaAdd` and `CriteriaDelete`
 
 ## 5. Error Pages
-- [ ] `ErrorNotAuthorized` for `errors/not_authorized.ctp`
-- [ ] `ErrorUnknownUser` for `errors/unknown_user.ctp`
+- [x] `ErrorNotAuthorized` for `errors/not_authorized.ctp`
+- [x] `ErrorUnknownUser` for `errors/unknown_user.ctp`
 
 - [x] `Home` page for `pages/home.ctp`
 
