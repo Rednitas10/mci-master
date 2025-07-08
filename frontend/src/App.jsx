@@ -15,6 +15,12 @@ import UserAdd from './pages/UserAdd'
 import UserEdit from './pages/UserEdit'
 import UserDelete from './pages/UserDelete'
 import UserLogout from './pages/UserLogout'
+import SolicitationAdd from './pages/SolicitationAdd'
+import SolicitationDelete from './pages/SolicitationDelete'
+import CriteriaAdd from './pages/CriteriaAdd'
+import CriteriaDelete from './pages/CriteriaDelete'
+import ErrorNotAuthorized from './pages/ErrorNotAuthorized'
+import ErrorUnknownUser from './pages/ErrorUnknownUser'
 
 function App() {
   const auth = { admin: true, uploader: true, reviewer: true, username: 'demo' }
@@ -39,6 +45,12 @@ function App() {
           <Route path="/users/delete" element={<UserDelete />} />
           <Route path="/users/logout" element={<UserLogout />} />
           <Route path="/logout" element={<UserLogout />} />
+          <Route path="/solicitations/add" element={<SolicitationAdd />} />
+          <Route path="/solicitations/delete" element={<SolicitationDelete />} />
+          <Route path="/criteria/add" element={<CriteriaAdd />} />
+          <Route path="/criteria/delete" element={<CriteriaDelete />} />
+          <Route path="/error/notAuthorized" element={<ErrorNotAuthorized authUsername={auth.username} controller="" action="" />} />
+          <Route path="/error/unknownUser" element={<ErrorUnknownUser authUsername={auth.username} />} />
         </Routes>
       </BaseLayout>
     </Router>
