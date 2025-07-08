@@ -254,4 +254,4 @@ See [docs/development.md](docs/development.md) for instructions on running the a
 
 ## Backend Table Service
 
-A placeholder backend service under `backend/` will expose table data to the React frontend. See [docs/backend_table_service_tasks.md](docs/backend_table_service_tasks.md) for the planned tasks.
+The Express backend under `backend/` serves table data for the React frontend. Documentation of the available endpoints is provided in [docs/backend_api.md](docs/backend_api.md).
