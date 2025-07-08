@@ -12,7 +12,7 @@ function BaseLayout({ children, auth }) {
         </div>
         <div id="login">
           {username ? (
-            <span>You are logged in as: {username} | <Link to="/logout">Log Out</Link></span>
+            <span>You are logged in as: {username} | <Link to="/users/logout">Log Out</Link></span>
           ) : (
             <span />
           )}

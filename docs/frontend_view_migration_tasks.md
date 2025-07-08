@@ -22,11 +22,11 @@ Migrate each Event view into its own React page. These can be developed concurre
 - [x] `EventViewAll` for `/events/viewAll`
 
 ## 3. User Views
-- [ ] `UsersViewAll` for `/users/viewAll`
-- [ ] `UserAdd` for `/users/add`
-- [ ] `UserEdit` for `/users/edit`
-- [ ] `UserDelete` for `/users/delete`
-- [ ] `UserLogout` for `/users/logout`
+- [x] `UsersViewAll` for `/users/viewAll`
+- [x] `UserAdd` for `/users/add`
+- [x] `UserEdit` for `/users/edit`
+- [x] `UserDelete` for `/users/delete`
+- [x] `UserLogout` for `/users/logout`
 
 ## 4. Solicitation and Criteria Views
 - [ ] `SolicitationAdd` and `SolicitationDelete`
