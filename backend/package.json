@@ -2,11 +2,22 @@
   "name": "backend",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "dotenv": "^16.3.1",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "keycloak-connect": "^23.0.0",
+    "mysql2": "^3.9.6"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
