@@ -31,6 +31,17 @@ and serves the production build on port `3000`.
 docker-compose up web
 ```
 
+For local development you can use the provided `docker-compose.override.yml`
+which mounts the source and runs the Vite dev server. This lets you edit files
+and immediately see changes without rebuilding the image:
+
+```bash
+docker-compose up web
+```
+
+When the override file is present the frontend will be available at
+<http://localhost:3000/>.
+
 You can override the `VITE_API_URL` environment variable in the compose file to
 point the frontend to a different backend API.
 
