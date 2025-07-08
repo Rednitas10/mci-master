@@ -28,37 +28,37 @@ services:
     networks:
       - internal
 
-  postgres:
-    image: postgres:${POSTGRES_IMAGE_TAG:-12}
-    restart: unless-stopped
-    environment:
-      POSTGRES_DB: app_db
-      POSTGRES_USER: app_user
-      POSTGRES_PASSWORD: secret
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
-      - logs-data:/var/log/postgresql
-      - ./logs/logserver/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
-    networks:
-      - internal
+  # postgres:
+  #   image: postgres:${POSTGRES_IMAGE_TAG:-12}
+  #   restart: unless-stopped
+  #   environment:
+  #     POSTGRES_DB: app_db
+  #     POSTGRES_USER: app_user
+  #     POSTGRES_PASSWORD: secret
+  #   volumes:
+  #     - postgres-data:/var/lib/postgresql/data
+  #     - logs-data:/var/log/postgresql
+  #     - ./logs/logserver/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+  #   networks:
+  #     - internal
 
-  postgrest:
-    image: postgrest/postgrest
-    restart: unless-stopped
-    environment:
-      PGRST_DB_URI: postgres://app_user:secret@postgres:5432/app_db
-      PGRST_DB_SCHEMA: api
-      PGRST_DB_ANON_ROLE: web_anon
-      PGRST_JWT_SECRET: ${PGRST_JWT_SECRET}
-    depends_on:
-      - postgres
-    volumes:
-      - logs-data:/var/log/postgrest
-    networks:
-      internal:
-        aliases:
-          - postgrest-internal
-      ingress:
+  # postgrest:
+  #   image: postgrest/postgrest
+  #   restart: unless-stopped
+  #   environment:
+  #     PGRST_DB_URI: postgres://app_user:secret@postgres:5432/app_db
+  #     PGRST_DB_SCHEMA: api
+  #     PGRST_DB_ANON_ROLE: web_anon
+  #     PGRST_JWT_SECRET: ${PGRST_JWT_SECRET}
+  #   depends_on:
+  #     - postgres
+  #   volumes:
+  #     - logs-data:/var/log/postgrest
+  #   networks:
+  #     internal:
+  #       aliases:
+  #         - postgrest-internal
+  #     ingress:
 
   web:
     image: php:8.1-apache
