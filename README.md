@@ -251,3 +251,7 @@ You may override these values by creating your own `.env` or editing `default.en
 See [docs/development.md](docs/development.md) for instructions on running the application with Docker.
 
 
+
+## Backend Table Service
+
+A placeholder backend service under `backend/` will expose table data to the React frontend. See [docs/backend_table_service_tasks.md](docs/backend_table_service_tasks.md) for the planned tasks.
