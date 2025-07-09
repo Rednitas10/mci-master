@@ -7,22 +7,22 @@ function MenuBar({ admin, uploader, reviewer }) {
       <ul>
         {admin && (
           <li>
-            <Link to="/admin">Admin Tools</Link>
+            <Link to="/events">Admin Tools</Link>
           </li>
         )}
         {uploader && (
           <>
             <li>
-              <Link to="/upload">Upload New Packets</Link>
+              <Link to="/events/upload">Upload New Packets</Link>
             </li>
             <li>
-              <Link to="/reupload">Re-upload Existing Packets</Link>
+              <Link to="/events/upload">Re-upload Existing Packets</Link>
             </li>
           </>
         )}
         {reviewer && (
           <li>
-            <Link to="/review">Review Events</Link>
+            <Link to="/events/review">Review Events</Link>
           </li>
         )}
       </ul>
