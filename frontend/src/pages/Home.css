@@ -24,3 +24,13 @@
   border: 1px solid #ccc;
   padding: 4px 8px;
 }
+
+.sections-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sections-grid section {
+  flex: 1 1 45%;
+}
