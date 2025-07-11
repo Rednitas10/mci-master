@@ -45,7 +45,7 @@ function Home() {
   )
 
   return (
-    <div>
+    <div className="home-container">
       <h1>CNICS Validation</h1>
       <p>Welcome to the CNICS Validation application.</p>
 
@@ -105,8 +105,8 @@ function Home() {
       </section>
 
       <div className="sections-grid">
-        <section>
-          <h2>Administrative Tools</h2>
+        <details id="admin-tools" className="home-details" open>
+          <summary>Administrative Tools</summary>
           <ul>
             <li>
               <Link to="/events/viewAll">View all events</Link>
@@ -118,10 +118,10 @@ function Home() {
               <Link to="/events/addMany">Add multiple events from a CSV file</Link>
             </li>
           </ul>
-        </section>
+        </details>
 
-        <section>
-          <h2>Users</h2>
+        <details id="users" className="home-details" open>
+          <summary>Users</summary>
           <ul>
             <li>
               <Link to="/users/add">Add a user</Link>
@@ -130,10 +130,10 @@ function Home() {
               <Link to="/users/viewAll">Edit/Delete users</Link>
             </li>
           </ul>
-        </section>
+        </details>
 
-        <section>
-          <h2>Upload Packets</h2>
+        <details id="upload" className="home-details" open>
+          <summary>Upload Packets</summary>
           <ul>
             <li>
               <Link to="/events/upload">Upload New Packets</Link>
@@ -142,16 +142,16 @@ function Home() {
               <Link to="/events/upload">Re-upload Existing Packets</Link>
             </li>
           </ul>
-        </section>
+        </details>
 
-        <section>
-          <h2>Reviewer Tools</h2>
+        <details id="review" className="home-details" open>
+          <summary>Reviewer Tools</summary>
           <ul>
             <li>
               <Link to="/events/review">Review Events</Link>
             </li>
           </ul>
-        </section>
+        </details>
       </div>
     </div>
   )
