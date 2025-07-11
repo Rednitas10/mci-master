@@ -90,7 +90,7 @@
     $prefix2 = (strpos(Router::url('/', true), 'mci') != true) ?
         'VTE' : 'MI';
 
-    echo $html->link('.doc', '/files/' . $prefix . ' MI' .Event::UPLOAD_INSTRUCTIONS);
+    echo $html->link('.doc', '/files/' . $prefix . ' MI' .Event::UPLOAD_INSTRUCTIONS, array('download'=>true));
     echo " | ";
     echo $html->link('.pdf', '/files/' . $prefix . ' MI' .Event::UPLOAD_INSTRUCTIONS_PDF, array('target'=>'_blank'));
     ?>
