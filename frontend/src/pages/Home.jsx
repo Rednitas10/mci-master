@@ -66,7 +66,7 @@ function Home() {
         </ol>
         <div>
           Full instructions:{' '}
-          <a href="/files/CNICS MI Review packet assembly instructions.doc">.doc</a>{' '}
+          <a href="/files/CNICS MI Review packet assembly instructions.doc" download>.doc</a>{' '}
           |{' '}
           <a
             href="/files/CNICS MI Review packet assembly instructions.pdf"
@@ -81,7 +81,7 @@ function Home() {
         <h3>Review Instructions:</h3>
         <div>
           View as:{' '}
-          <a href="/files/CNICS MI reviewer instructions.doc">.doc</a> |{' '}
+          <a href="/files/CNICS MI reviewer instructions.doc" download>.doc</a> |{' '}
           <a href="/files/CNICS MI reviewer instructions.pdf" target="_blank">
             .pdf
           </a>

@@ -15,7 +15,7 @@ if ($showPatientInfo) {
     </ol>
     <div>Full instructions: 
     <?php
-    echo $html->link('.doc', '/files/' . $prefix . ' MI' . Event::UPLOAD_INSTRUCTIONS);
+    echo $html->link('.doc', '/files/' . $prefix . ' MI' . Event::UPLOAD_INSTRUCTIONS, array('download'=>true));
     echo " | ";
     echo $html->link('.pdf', '/files/' . $prefix . ' MI' . Event::UPLOAD_INSTRUCTIONS_PDF, array('target'=>'_blank'));
     ?>
@@ -29,7 +29,7 @@ if ($showPatientInfo) {
     <br />
     <div>View as: 
     <?php
-    echo $html->link('.doc', '/files/' . $prefix . Event::REVIEW_INSTRUCTIONS);
+    echo $html->link('.doc', '/files/' . $prefix . Event::REVIEW_INSTRUCTIONS, array('download'=>true));
     echo " | ";
     echo $html->link('.pdf', '/files/' . $prefix . Event::REVIEW_INSTRUCTIONS_PDF, array('target'=>'_blank'));
     ?>

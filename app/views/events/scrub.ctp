@@ -7,7 +7,7 @@
     <br />
     <div>View as: 
     <?php
-    echo $html->link('.doc', '/files/' . Event::SCRUB_INSTRUCTIONS);
+    echo $html->link('.doc', '/files/' . Event::SCRUB_INSTRUCTIONS, array('download'=>true));
     echo " | ";
     echo $html->link('.pdf', '/files/' . Event::SCRUB_INSTRUCTIONS_PDF, array('target'=>'_blank'));
     ?>
