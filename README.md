@@ -250,6 +250,37 @@ You may override these values by creating your own `.env` or editing `default.en
 
 See [docs/development.md](docs/development.md) for instructions on running the application with Docker.
 
+## Using the Log Server to Troubleshoot Network Errors
+
+This project includes an optional logging stack under `logs/` that stores
+container logs in a PostgreSQL database. These logs can help diagnose network
+issues between services.
+
+1. Setup the log server environment:
+   ```bash
+   cd logs
+   cp default.env .env
+   ```
+   Edit `.env` if you need to change any defaults.
+2. Start the logging stack:
+   ```bash
+   docker-compose up -d
+   ```
+   This launches PostgREST and PostgreSQL for collecting log events.
+3. Ensure your other services have the `LOG_SERVER_URL` variable set. The main
+   `docker-compose.yaml` already forwards logs from the `web` container.
+4. When a network failure occurs you can log a message from a container using
+   the standard `logger` command. For example:
+   ```bash
+   docker-compose exec web logger "network error connecting to backend"
+   ```
+   The message will be stored in the log server.
+5. Query the log server to view recent events:
+   ```bash
+   curl http://localhost:3000/events?order=id.desc
+   ```
+   Filter the JSON output for your log entries to help identify networking problems.
+
 ## Generating PDF copies of instruction files
 
 Some pages link to `.pdf` versions of the documents under `app/webroot/files/`.
