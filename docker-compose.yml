@@ -33,6 +33,18 @@ services:
     ports:
       - "3000:3000"
 
+  backend:
+    build: ./backend
+    environment:
+      DB_HOST: mariadb
+      DB_USER: ${DB_USER:-root}
+      DB_PASSWORD: ${DB_PASSWORD:-example}
+      DB_NAME: ${DB_NAME:-mci}
+    depends_on:
+      - mariadb
+    ports:
+      - "3001:3000"
+
 volumes:
   db_data:
 
